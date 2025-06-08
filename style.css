@@ -912,24 +912,32 @@ body .persona > .text-wrapper {
 }
 
 /* === 피처 요약 텍스트 그룹 === */
-.features-highlights {
+.features-cards {
     display: flex;
+    gap: 40px;
     justify-content: center;
-    max-width: 1140px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 12px;
+    margin-top: 30px;
+    margin-left: 30px;
 }
-.features-highlights > div {
-    flex: 0 0 350px;
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     text-align: left;
-    font-size: 1.11rem;
-    font-weight: 700;
-    border-radius: 15px 15px 0 0;
-    padding: 16px 10px 10px 10px;
-    min-width: 330px;
     max-width: 330px;
-    border-bottom: 0;
+    gap: 12px;
+}
+
+.feature-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.feature-description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #444;
 }
 
 /* === 피처 상세 설명(작은 글씨) === */
