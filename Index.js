@@ -380,7 +380,7 @@ const HERO_BG_IMAGES = [
 ];
 
 // [2] 전환 간격(ms)
-const HERO_BG_INTERVAL = 3000; // 3초
+const HERO_BG_INTERVAL = 4000; // 4초
 
 // [3] 페이드 효과 지속 시간(ms)
 const HERO_BG_FADE_DURATION = 400;

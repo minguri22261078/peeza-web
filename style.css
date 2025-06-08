@@ -15,7 +15,7 @@ html, body {
     font-family: 'Pretendard Variable', 'Pretendard-Regular', Pretendard, sans-serif;
     color: #222;
     color: #222;
-    background-color: #fff;
+    background-color: #ffffff;
     line-height: 1.6;
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -981,6 +981,7 @@ body .persona > .text-wrapper {
      justify-content: center;
      margin-top: 80px;
      margin-bottom: 100px;
+     background: #ffffff;
  }
 
 .desgin01 .div {
@@ -996,7 +997,7 @@ body .persona > .text-wrapper {
     height: auto;
     border-radius: 18px;
     transition: transform 0.3s ease;
-    margin-right: 40px;
+    margin-right: 120px;
 }
 
 .desgin01 .d-text {
@@ -1004,37 +1005,10 @@ body .persona > .text-wrapper {
     max-width: 60vw;
     height: auto;
     margin-top: 450px;
-    margin-left: 40px;
+    margin-left: 0;
     align-self: flex-start;
 }
 
-/* 🔶 desgin01 반응형 */
-@media (max-width: 1100px) {
-  .desgin01 .div {
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 32px;
-  }
-  .desgin01 .d {
-    width: 92vw;
-    max-width: 98vw;
-    margin-right: 0;
-    margin-bottom: 0;
-  }
-  .desgin01 .d-text {
-    width: 92vw;
-    max-width: 98vw;
-    margin-top: 0;
-    margin-left: 0;
-    align-self: center;
-  }
-  .desgin01 {
-    margin-top: 40px;
-    margin-bottom: 60px;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
 
 /* 🔶 Desgin02 */
 .desgin02 {
@@ -1042,6 +1016,7 @@ body .persona > .text-wrapper {
     justify-content: center;
     margin-top: 80px;
     margin-bottom: 100px;
+    background: #ffffff;
 }
 
 .desgin02 .div {
@@ -1057,8 +1032,8 @@ body .persona > .text-wrapper {
     height: auto;
     border-radius: 18px;
     transition: transform 0.3s ease;
-    margin-right: 40px;
-    margin-left: 40px;
+    margin-right: 100px;
+    margin-left: 120px;
 }
 
 .desgin02 .d-text {
@@ -1066,36 +1041,8 @@ body .persona > .text-wrapper {
     max-width: 60vw;
     height: auto;
     margin-top: 400px;
-    margin-left: 40px;
+    margin-left: 0;
     align-self: flex-start;
-}
-
-/* 🔶 desgin02 반응형 */
-@media (max-width: 1100px) {
-    .desgin02 .div {
-        flex-direction: column-reverse;
-        align-items: center;
-        gap: 32px;
-    }
-    .desgin02 .d {
-        width: 92vw;
-        max-width: 98vw;
-        margin-right: 0;
-        margin-bottom: 0;
-    }
-    .desgin02 .d-text {
-        width: 92vw;
-        max-width: 98vw;
-        margin-top: 0;
-        margin-left: 0;
-        align-self: center;
-    }
-    .desgin02 {
-        margin-top: 40px;
-        margin-bottom: 60px;
-        padding-left: 0;
-        padding-right: 0;
-    }
 }
 
 /* 🔶 Desgin03 */
@@ -1104,6 +1051,7 @@ body .persona > .text-wrapper {
     justify-content: center;
     margin-top: 80px;
     margin-bottom: 100px;
+    background: #ffffff;
 }
 
 .desgin03 .div {
@@ -1132,31 +1080,40 @@ body .persona > .text-wrapper {
     align-self: center;
 }
 
-/* 🔶 desgin03 반응형 */
+/* 반응형 */
 @media (max-width: 1100px) {
+    .desgin01 .div,
+    .desgin02 .div,
     .desgin03 .div {
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;
-        gap: 32px;
+        gap: 36px;
     }
+
+    .desgin01 .d,
+    .desgin02 .d,
     .desgin03 .d {
-        width: 92vw;
-        max-width: 98vw;
-        margin-right: 0;
-        margin-bottom: 0;
+        width: 94vw;
+        max-width: 96vw;
+        margin: 0 auto;
     }
+
+    .desgin01 .d-text,
+    .desgin02 .d-text,
     .desgin03 .d-text {
-        width: 92vw;
-        max-width: 98vw;
-        margin-top: 0;
-        margin-left: 0;
-        align-self: center;
+        width: 94vw;
+        max-width: 96vw;
+        margin: 0 auto;
+        margin-top: 12px;
+        text-align: center;
     }
+
+    .desgin01,
+    .desgin02,
     .desgin03 {
         margin-top: 40px;
         margin-bottom: 60px;
-        padding-left: 0;
-        padding-right: 0;
+        padding: 0 2vw;
     }
 }
 
@@ -1470,17 +1427,17 @@ body .persona > .text-wrapper {
 
 /* [1] Hero 섹션 전체 트랜지션 (배경/색상 포함) */
 .hero {
-    transition: background-image 0.6s ease, background 0.6s ease, color 0.4s;
+    transition: background-image 1s ease-in-out, background 1s ease-in-out, color 0.6s ease;
 }
 
 /* [2] .bg-fade 상태일 때 투명도 낮아짐 → 배경 전환 직전 효과 */
 .hero.bg-fade {
-    opacity: 0.1;
-    transition: opacity 0.4s;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
 }
 
 /* [3] 평상시(=bg-fade 아니면) 다시 원상 복귀 */
 .hero:not(.bg-fade) {
     opacity: 1;
-    transition: opacity 0.6s;
+    transition: opacity 0.6s ease-in;
 }
