@@ -368,23 +368,6 @@ function sectionSnapScroll() {
 window.addEventListener('DOMContentLoaded', sectionSnapScroll);
 
 
-
-// 배경 이미지 리스트
-const heroBackgrounds = [
-  'img/homeimage1.png',
-  'img/homeimage2.png',
-  'img/homeimage3.png'
-];
-
-let heroIdx = 0;
-const heroSection = document.querySelector('.hero');
-
-function setHeroBg(idx) {
-  heroSection.style.backgroundImage = `url('${heroBackgrounds[idx]}')`;
-  heroSection.style.backgroundPosition = 'center center';
-  heroSection.style.backgroundSize = 'cover';
-}
-
 /* ====================================
    [Hero 섹션 배경 이미지 자동 변경 + 페이드 전환]
 ==================================== */
