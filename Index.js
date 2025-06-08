@@ -366,3 +366,69 @@ function sectionSnapScroll() {
 
 // 페이지 최초 로드시 한 번만 실행
 window.addEventListener('DOMContentLoaded', sectionSnapScroll);
+
+
+
+// 배경 이미지 리스트
+const heroBackgrounds = [
+  'img/homeimage1.png',
+  'img/homeimage2.png',
+  'img/homeimage3.png'
+];
+
+let heroIdx = 0;
+const heroSection = document.querySelector('.hero');
+
+function setHeroBg(idx) {
+  heroSection.style.backgroundImage = `url('${heroBackgrounds[idx]}')`;
+  heroSection.style.backgroundPosition = 'center center';
+  heroSection.style.backgroundSize = 'cover';
+}
+
+/* ====================================
+   [Hero 섹션 배경 이미지 자동 변경 + 페이드 전환]
+==================================== */
+
+// [1] 배경 이미지 경로 리스트(여기만 수정하면 이미지 교체 가능)
+const HERO_BG_IMAGES = [
+  'img/homeimage1.png',
+  'img/homeimage2.png',
+  'img/homeimage3.png'
+];
+
+// [2] 전환 간격(ms)
+const HERO_BG_INTERVAL = 3000; // 3초
+
+// [3] 페이드 효과 지속 시간(ms)
+const HERO_BG_FADE_DURATION = 400;
+
+let heroBgIndex = 0;
+const heroSection = document.querySelector('.hero');
+
+/**
+ * 실제 Hero 섹션에 배경 이미지 적용 함수
+ */
+function setHeroBackground(idx) {
+  if (!heroSection) return;
+  heroSection.style.backgroundImage = `url('${HERO_BG_IMAGES[idx]}')`;
+  heroSection.style.backgroundPosition = 'center center';
+  heroSection.style.backgroundSize = 'cover';
+}
+
+/**
+ * 배경 이미지 변경 및 페이드 효과 함수
+ */
+function changeHeroBgWithFade() {
+  heroBgIndex = (heroBgIndex + 1) % HERO_BG_IMAGES.length;
+  heroSection.classList.add('bg-fade');
+  setTimeout(() => {
+    setHeroBackground(heroBgIndex);
+    heroSection.classList.remove('bg-fade');
+  }, HERO_BG_FADE_DURATION);
+}
+
+// [4] 최초 1회 배경 적용
+setHeroBackground(heroBgIndex);
+
+// [5] 주기적으로 변경 (인터벌)
+setInterval(changeHeroBgWithFade, HERO_BG_INTERVAL);
